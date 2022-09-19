@@ -35,11 +35,12 @@ header div {
     display: flex;
     padding: 4px;
 
-    transition: transform .3s;
+    transition: transform .4s;
 }
 
 header div:hover {
     transform: scale(1.1);
+    background-image: linear-gradient(90deg, #584dee 0%, #d7f845 50.52%, #fa534d 100%);
 }
 
 header div img {
@@ -61,6 +62,10 @@ section {
     background-image: linear-gradient(90deg, #fa534d 0%, #d7f845 50.52%, #584dee 100%);
     padding-bottom: 4px;
     border-radius: 10px;
+}
+
+section:hover {
+    background-image: linear-gradient(90deg, #584dee 0%, #d7f845 50.52%, #fa534d 100%);
 }
 
 section div {
@@ -97,3 +102,43 @@ ul img {
 }
 
 /* ANIMATION */
+
+header div {
+    animation: fromTop .8s .2s backwards;
+}
+
+main section {
+    animation: fromBottom .8s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .8s;
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
